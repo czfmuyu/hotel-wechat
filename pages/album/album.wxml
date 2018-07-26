@@ -1,0 +1,58 @@
+<view class="album-title">
+  <view class='album-all fl {{currentTab=="0"?"click_style":""}}' bindtap='clickChoose' data-tab-name="0">全部({{allMsg.totalCount}})</view>
+  <view class='album-room fl {{currentTab=="1"?"click_style":""}}' bindtap='clickChoose' data-tab-name="1">房间({{allMsg.roomCount}})</view>
+  <view class='album-repast fl {{currentTab=="2"?"click_style":""}}' bindtap='clickChoose' data-tab-name="2">餐饮({{allMsg.repastCount}})</view>
+  <view class='album-facade fl {{currentTab=="3"?"click_style":""}}' bindtap='clickChoose' data-tab-name="3">外观({{allMsg.facadeCount}})</view>
+  <view class='album-circum fl {{currentTab=="4"?"click_style":""}}' bindtap='clickChoose' data-tab-name="4">周边({{allMsg.circumCount}})</view>
+  <view class='album-public fl {{currentTab=="5"?"click_style":""}}' bindtap='clickChoose' data-tab-name="5">公共区域({{allMsg.publicAreaCount}})</view>
+  <view class='album-public fl {{currentTab=="6"?"click_style":""}}' bindtap='clickChoose' data-tab-name="6">其他({{allMsg.restsCount}})</view>
+</view>
+<view class='all-hotel-img'>
+<!-- 所有的 -->
+   <block wx:for="{{allPic}}" wx:key="unique">
+  <view class='item-hotel-img fl' bindtap='previewAllImg' data-index="{{index}}" wx:if="{{PicImg}}">
+    <image src='{{item}}' mode='aspectFill' class='item-pic'></image>
+    </view>
+  </block> 
+
+<!-- 分类 -->
+  <block wx:for="{{allData.circumImg}}" wx:key="unique">
+    <view class='item-hotel-img fl' bindtap='previewImg' data-id="4" data-index="{{index}}" data-name="circumImg">
+    <image src='{{item}}' class='item-pic' mode='aspectFill'></image>
+    </view>
+  </block>
+  <!--  -->
+  <block wx:for="{{allData.facadeImg}}" wx:key="unique">
+    <view class='item-hotel-img fl' bindtap='previewImg' data-id="3" data-index="{{index}}" data-name="facadeImg">
+    <image src='{{item}}' mode='aspectFill' class='item-pic'></image>
+    </view>
+  </block>
+  <!--  -->
+  <block wx:for="{{allData.publicAreaImg}}" wx:key="unique">
+    <view class='item-hotel-img fl' bindtap='previewImg' data-index="{{index}}" data-id="5" data-name="publicAreaImg">
+    <image src='{{item}}' mode='aspectFill' class='item-pic'></image>
+    </view>
+  </block>
+  <!--  -->
+  <block wx:for="{{allData.repastImg}}" wx:key="unique">
+    <view class='item-hotel-img fl' bindtap='previewImg' data-index="{{index}}" data-id="2" data-name="repastImg">
+    <image src='{{item}}' mode='aspectFill' class='item-pic'></image>
+    </view>
+  </block>
+  <!--  -->
+  <block wx:for="{{allData.restsImg}}" wx:key="unique">
+    <view class='item-hotel-img fl' bindtap='previewImg' data-index="{{index}}" data-id="6" data-name="restsImg">
+    <image src='{{item}}' class='item-pic' mode='aspectFill'></image>
+    </view>
+  </block>
+  <!--  -->
+  <block wx:for="{{allData.roomImg}}" wx:key="unique">
+    <view class='item-hotel-img fl' bindtap='previewImg' data-index="{{index}}" data-id="1" data-name="roomImg">
+    <image src='{{item}}' class='item-pic' mode='aspectFill'></image>
+    </view>
+  </block>
+</view>
+<!--up-icon  -->
+<view class='up-icon' hidden='{{scrollTop<=400}}' bindtap="bindViewStoredetailb">
+  <image src='{{imgSeverUrl}}up-icon.png' mode='aspectFill' class='up-pic' hidden='{{scrollTop<=400}}'></image>
+</view>

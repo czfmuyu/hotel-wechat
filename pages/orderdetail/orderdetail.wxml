@@ -1,0 +1,67 @@
+<view class="order-status">
+  <view class='order-status-detail' wx:if="{{orderDetail.orderState==1}}">
+    <text class='order-status-name'>等待入住</text>
+    <text class='order-status-desc'>已预定成功，酒店将整晚留房，您可安心入住~</text>
+  </view>
+  <view class='order-status-detail' wx:if="{{orderDetail.orderState==2}}">
+    <text class='order-status-name'>已入住</text>
+    <text class='order-status-desc'>期待您的下次光临~</text>
+  </view>
+  <view class='order-status-detail' wx:if="{{orderDetail.orderState==3}}">
+    <text class='order-status-name'>已退款</text>
+    <text class='order-status-desc'>酒店无房退款，给您带来的不便，我们深表歉意!</text>
+  </view>
+  <view class='order-status-detail' wx:if="{{orderDetail.orderState==4}}">
+    <text class='order-status-name'>等待入住</text>
+    <text class='order-status-desc'>已预定成功，酒店将整晚留房，您可安心入住~</text>
+  </view>
+</view>
+<!--order-detail  -->
+<view class='order-base order-detail-list'>
+  <view class='detail-list-top'>
+    <view class='list-top-hotel-name'>{{orderDetail.hotelName}}</view>
+    <view class='list-top-hotel'>
+      <view class='top-hotel-left'> {{orderDetail.address}}</view>
+      <view class='top-hotel-right'>
+        <image src='{{imgurl}}order/order-navigation-icon.png' class='order-navigation-icon' catchtap='lookNavigation' data-lat="{{orderDetail.lat}}" data-lng="{{orderDetail.lng}}"></image>
+        <text class='order-navigation-right'></text>
+        <image src='{{imgurl}}order/order-phone-icon.png' class="order-phone-icon" bindtap='phoneCall'></image>
+      </view>
+    </view>
+  </view>
+  <view class='detail-list-down'>
+    <view class='item-detail-room'>{{orderDetail.roomName}}
+      <text wx:if="{{orderDetail.window==1}}">(有窗)</text>
+      <text wx:else>(无窗)</text>
+    </view>
+    <view class='item-detail-time'>
+      入住:{{orderDetail.startTime}} 离店 :{{orderDetail.endTime}} {{orderDetail.lengthOfResidence}}晚{{orderDetail.numberOfRooms}}间
+    </view>
+    <view class='item-pay-price'>￥{{orderDetail.totalPrice}}</view>
+  </view>
+</view>
+<!--order-name  -->
+<view class='order-base order-room'>
+  <view class='order-room-num'>
+    <text class='order-title'>房间数</text>：{{orderDetail.numberOfRooms}} 间
+  </view>
+  <view class='order-room-name' wx:for="{{orderDetail.userNameList}}" wx:key="unique">>
+    <text class='order-title'>入住人：</text>{{item.name}}
+  </view>
+  <view class='order-room-phone'>
+    <text class='order-title'>联系电话：</text>{{orderDetail.userMobile}}
+  </view>
+</view>
+<!--ordercode  -->
+<view class='order-code order-base'>
+  <view class='ordr-code-code'>
+    <text class='order-id'>订单编号：</text>{{orderDetail.orderCode}}
+  </view>
+  <view class='ordr-code-time'>
+    <text class='order-id'>下单时间：</text>{{orderDetail.creatTime}}
+  </view>
+</view>
+<!--button  -->
+  <view class='order-status-button' wx:if="{{orderDetail.orderState==2}}" bindtap='detalOrder' data-orderCode="{{orderDetail.orderCode}}">
+    删除订单
+  </view>

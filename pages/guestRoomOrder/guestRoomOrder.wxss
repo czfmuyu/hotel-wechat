@@ -1,0 +1,29 @@
+/* pages/guestRoomOrder/guestRoomOrder.wxss */
+page {width: 100%;height: 100%;padding-bottom: 400rpx;background: #f5f5f5;}
+.room-descr-block{padding:10rpx 20rpx;}
+.room-top{
+  padding: 20rpx 20rpx 10rpx;
+}
+.room-descr{background-color: #fff;border-radius: 20rpx;}
+.room-info-block{display: flex;flex-direction: row;justify-content: space-between;}
+.room-info-item{height: 200rpx;width: 310rpx;}
+.room-info-right-item{height: 200rpx;width: 380rpx;}
+.img{height: 100%;width: 100%;}
+.room-block{margin-bottom: 10rpx;}
+.bor-bottom{border-bottom: #eee 1px solid;}
+.tips-color{color: #999;}
+.room-num{display: inline-block;width: 450rpx;}
+.room-people{display: flex;flex-direction: row;}
+.mr-block{margin-right: 75rpx;}
+.people-mb{margin-bottom: 10rpx;}
+.room-people-block{width: 450rpx;}
+.footer-tips{text-align: left;line-height: 1.75;padding: 6rpx 24rpx;}
+.time{display: flex;flex-direction: row;justify-content: space-between;}
+.t1{width: 240rpx;}
+.t2{width: 70rpx;margin-left: 10rpx;}
+.t3{width: 110rpx;}
+.footer-btn{width: 100%;height: 100rpx;position: fixed;bottom: 0;display: flex;flex-direction: row;}
+.footer-btn-rout{width: 70%;background-color: #22AC38;color: #fff;text-align: center;line-height: 2.75;}
+.footer-btn-price{width: 30%;background-color: #fff;color: #4d4d4d;text-align: center;line-height: 2.75;}
+.b-icon{background-size: cover;height: 20rpx;width: 15rpx;}
+.icon-right{width:30rpx;height:20rpx;}

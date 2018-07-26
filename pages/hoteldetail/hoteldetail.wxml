@@ -1,0 +1,195 @@
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">酒店服务</view>
+  <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">设施服务</view>
+  <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">酒店政策</view>
+</view>
+
+<swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
+  <!--订单  -->
+  <swiper-item class="hotel-order-list">
+    <view class='hotel-desc sd'>
+      <view class='hotel-spec-name'>酒店特色</view>
+      <view class='hotel-list-name'>
+       1、驱车前往上海迪士尼乐园度假区、浦东新国际博览中心均20分钟左右，驱车约10分钟可以抵达绿地川沙东海岸国际商业广场、川沙百联购物中心
+      </view>
+      <view class='hotel-list-name'>
+        2、酒店拥有大型停车场、无线WIFI全覆盖，提供上海迪士尼旅游度假区及浦东国际机场班车接送服务（详情请咨询商家）
+      </view>
+    </view>
+    <!--middle  -->
+    <view class='hotel-desc-middle hotel-base sd'>
+      <view class='hotel-spec-name'>专车接送</view>
+      <view class='hotel-list-name'>
+        1、24小时无偿接送浦东机场
+      </view>
+      <view class='hotel-list-name'>
+        2、迪士尼接送班车、野生动物园班车、上海著名景点穿梭巴士，所有班车服务均是无偿的
+      </view>
+      <view class='hotel-list-name'>
+        3、需提前预约，具体班次请点击拨打按钮咨询酒店前台 021-68661988
+      </view>
+    </view>
+    <!--end  -->
+    <view class='hotel-base hotel-phone sd'>联系电话:021-68661988</view>
+    <view class='hotel-base hotel-address sd'>
+      <view class='hotel-name-list-first'>
+        <text class='hotel-name'>所属集团</text>:首旅如家
+      </view>
+      <view class='hotel-name-list'>
+        <text class='hotel-name'>所属子品牌</text>：如家精选
+      </view>
+    </view>
+  </swiper-item>
+  <!--end  -->
+  <swiper-item class="hotel-order-list">
+    <view class='hotel-servr hotel-base'>
+      <!-- <view class='server-list-big'>设施服务</view> -->
+      <view class='hotel-server-list'>
+        <!--name  -->
+        <view class='server-list-title'>
+          <image src='{{imgurl}}' class='list-icon'></image>
+          <view class='list-title-name'>网络</view>
+        </view>
+        <!--list  -->
+        <view class='list-title-item'>
+          <text class='title-item-name'>客房WiFi免费</text>
+          <text class='title-item-name'>公用区WiFi免费</text>
+        </view>
+      </view>
+      <!-- car -->
+      <view class='hotel-server-list'>
+        <view class='server-list-title'>
+          <image src='{{imgurl}}' class='list-icon'></image>
+          <view class='list-title-name'>停车场</view>
+        </view>
+        <!--list  -->
+        <view class='list-title-item'>
+          <text class='title-item-name'>免费停车场</text>
+          <text class='title-item-name'>公用区WiFi免费</text>
+        </view>
+      </view>
+      <!--  -->
+      <view class='hotel-server-list'>
+        <view class='server-list-title'>
+          <image src='{{imgurl}}' class='list-icon'></image>
+          <view class='list-title-name'>交通服务</view>
+        </view>
+        <!--list  -->
+        <view class='list-title-item'>
+          <text class='title-item-name'>班车服务</text>
+          <text class='title-item-name'>接站服务</text>
+          <text class='title-item-name'>租车服务</text>
+        </view>
+      </view>
+      <!--  -->
+      <view class='hotel-server-list'>
+        <view class='server-list-title'>
+          <image src='{{imgurl}}' class='list-icon'></image>
+          <view class='list-title-name'>前台服务</view>
+        </view>
+        <!--list  -->
+        <view class='list-title-item'>
+          <text class='title-item-name'>行李寄存</text>
+          <text class='title-item-name'>24小时前台</text>
+          <text class='title-item-name'>24小时大堂经理</text>
+          <text class='title-item-name'>旅游票务</text>
+          <text class='title-item-name'>叫醒服务</text>
+          <text class='title-item-name'>前台保险柜</text>
+          <text class='title-item-name'>快速办理入住</text>
+        </view>
+      </view>
+      <!--  -->
+      <view class='hotel-server-list'>
+        <view class='server-list-title'>
+          <image src='{{imgurl}}' class='list-icon'></image>
+          <view class='list-title-name'>商务服务</view>
+        </view>
+        <!--list  -->
+        <view class='list-title-item'>
+          <text class='title-item-name'>传真/复印</text>
+          <text class='title-item-name'>商务中心</text>
+        </view>
+      </view>
+      <!--  -->
+      <view class='hotel-server-list'>
+        <view class='server-list-title'>
+          <image src='{{imgurl}}' class='list-icon'></image>
+          <view class='list-title-name'>通用设施</view>
+        </view>
+        <!--list  -->
+        <view class='list-title-item'>
+          <text class='title-item-name'>暖气</text>
+          <text class='title-item-name'>电梯</text>
+          <text class='title-item-name'>非经营性休息区</text>
+          <text class='title-item-name'>大堂免费报纸</text>
+          <text class='title-item-name'>无烟楼层</text>
+          <text class='title-item-name'>所有场所严禁吸烟</text>
+        </view>
+      </view>
+      <!--end  -->
+      <view class='hotel-server-list'>
+        <view class='server-list-title'>
+          <image src='{{imgurl}}' class='list-icon'></image>
+          <view class='list-title-name'>其他服务</view>
+        </view>
+        <!--list  -->
+        <view class='list-title-item'>
+          <text class='title-item-name'>鲜花店</text>
+          <text class='title-item-name'>洗衣服务</text>
+          <text class='title-item-name'>熨衣服务</text>
+        </view>
+      </view>
+      <!--  -->
+    </view>
+  </swiper-item>
+  <!--end  -->
+  <swiper-item class="hotel-order-list">
+    <view class="hotel-servr hotel-base">
+      <view class='hotel-polic'>
+        <view class='hotel-polic-name'>入离时间</view>
+        <view class='hotel-polic-detail'>
+          入住时间：12:00以后
+          <text class='leave-time'>离店时间：13:00以前</text>
+        </view>
+      </view>
+      <!--  -->
+      <view class='hotel-polic-promit'>
+        <view class='hotel-polic-name'>酒店提示</view>
+        <view class='hotel-polic-detail'>
+          根据《上海市公共场所控制吸烟条例》，从1017年3月1日起，酒店不能安排吸烟房，并禁止在酒店室内区域吸烟。
+        </view>
+      </view>
+      <!--  -->
+      <view class='hotel-polic-child'>
+        <view class='hotel-polic-name'>儿童及加床政策</view>
+        <view class='hotel-polic-detail'>
+          <view>1、酒店允许携带儿童入住。</view>
+          <view>2、不接受18岁以下客人在无监护人陪同的情况下入住 </view>
+          <view>3、加床政策、儿童人数请参见您选定的客房政策，若超过房型限定人数，可能收取额外费用。提出的任何要求均需获得酒店的确认，所有的服务详情以酒店的告知为准。</view>
+        </view>
+      </view>
+      <!--  -->
+      <view class='hotel-polic-meal'>
+        <view class='hotel-polic-name'>膳食安排</view>
+        <view class='hotel-polic-detail'>
+          <view> 自助早餐：RMB 38</view>
+        </view>
+      </view>
+      <!--  -->
+      <view class='hotel-polic-pag'>
+        <view class='hotel-polic-name'>宠物</view>
+        <view class='hotel-polic-detail'>
+          <view> 不可携带宠物。</view>
+        </view>
+      </view>
+      <!--  -->
+      <view class='hotel-polic-bank'>
+        <view class='hotel-polic-name'>酒店接受的银行卡</view>
+        <view class='hotel-polic-detail'>
+          <view> 国内发行的银联卡</view>
+        </view>
+      </view>
+      <!--end  -->
+    </view>
+  </swiper-item>
+</swiper>

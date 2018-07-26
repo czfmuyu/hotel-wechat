@@ -1,0 +1,19 @@
+<!--pages/login/login.wxml-->
+<view class="wrapper">
+    <view class="login-con" bindsubmit="formSubmit">
+
+        <view class="field fl">
+            <image class="icon-css icon-phone fl"  src="{{_iconPhone}}" />
+            <input class="phone-input fl" placeholder-class="pld" name="" bindinput="inputPhoneNum" type="number" placeholder="输入手机号码" />
+        </view>
+
+        <view class="field fl">
+            <image class="icon-css icon-lock fl" src="{{_iconLock}}" />
+            <input class="code-input fl" placeholder-class="pld" name=""  bindinput="inputCode" type="number" placeholder="输入动态码" />
+            <button class="get-code fr fs26" bindtap="getDynamicCode"  disabled="{{_disabled}}">{{_initialText}}</button>
+        </view>
+        <text class="hint fs22 col2788f9">新用户验证登陆即完成注册</text>
+        <button class="btn-login fs34 colffffff" bindtap="doLogin">登陆</button>
+    </view>
+
+</view>

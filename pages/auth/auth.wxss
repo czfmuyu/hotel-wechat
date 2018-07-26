@@ -1,0 +1,6 @@
+
+.auth-btn {width: 480rpx;height: 88rpx;line-height: 88rpx;border-radius: 44rpx;font-weight: 300;background-image: linear-gradient(0deg,  #2788f9 0%, #6fb1fe 100%),linear-gradient(#ab47bc, #ab47bc);background-blend-mode: normal, normal;}
+.page {height:30vh;display: flex;justify-content: center;align-items: center;}
+.comment {width: 100%;margin-bottom: 20rpx;text-align: center;}
+.shop-logo{width: 200rpx;height: 200rpx;margin: 10% auto;}
+.logo-pic{width: 200rpx;height: 200rpx;}

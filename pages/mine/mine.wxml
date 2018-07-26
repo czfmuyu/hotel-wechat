@@ -1,0 +1,23 @@
+<!--pages/mine/mine.wxml-->
+<view class="wrapper">
+  <!--  Header... -->
+  <view class="header-con pr">
+    <view class="figure-con bg-4d95e9">
+      <image class="figure-img hor-center" src="{{_vatarUrl}}" mode="aspectFill"></image>
+      <text class="figure-txt hor-center fs32 colffffff">{{_nickName}}</text>
+    </view>
+  </view>
+  <!-- List... -->
+  <view class="list-con fl">
+    <view class="list-item-con fl" bindtap="goOrderPage">
+      <image class="list-icon fl icon-order" src="{{_iconOrder}}" mode="aspectFill"></image>
+      <text class="list-txt fl fs32 col666">我的订单</text>
+      <image class="list-icon fl icon-arro-r" src="{{_iconArroR}}" mode="aspectFill"></image>
+    </view>
+    <view class="list-item-con fl" bindtap="doCall">
+      <image class="list-icon fl icon-customer" src="{{_iconCustomer}}" mode="aspectFill"></image>
+      <text class="list-txt fl fs32 col666">联系客服</text>
+      <image class="list-icon fl icon-arro-r" src="{{_iconArroR}}" mode="aspectFill"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,108 @@
+<!--pages/guestRoomDetail/guestRoomDetail.wxml-->
+
+<!-- 顶部swiper -->
+<view class="top-swiper">
+
+  <swiper class="img-h" autoplay="true" indicator-color="#fff" indicator-active-color="#999" indicator-dots='true' interval="{{interval}}" circular="true">
+    <block wx:for="{{info.roomImgs}}" wx:for-index="idx" wx:key="idx" wx:for-item="itemName">
+      <swiper-item>
+        <image src="{{itemName}}" mode='aspectFill' data-img="{{itemName}}" data-list="{{info.roomImgs}}" bindtap="seeImg" class="slide-image wp100" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="tips fs24">{{info.roomName}}</view>
+</view>
+
+<!-- 描述 -->
+<view class="room-top">
+  <view class="room-descr">
+
+    <view class="room-descr-item-block">
+      <view class="w300 dilb fs28 col333">
+        <text class="mr30 col808080">上网</text>
+        <text>{{info.internet}}</text>
+      </view>
+      <view class="w300 dilb fs28 col333">
+        <text class="mr30 col808080">卫浴</text>
+        <text>{{info.bathroom}}</text>
+      </view>
+    </view>
+
+    <!-- window:date.window,// (integer, optional): 是否有窗:(0-无窗,1-有窗,2-部分有窗) -->
+    <view class="room-descr-item-block">
+      <view class="w300 dilb fs28 col333">
+        <text class="mr30 col808080">窗户</text>
+        <text wx:if="{{info.window == 0}}">无窗</text>
+        <text wx:elif="{{info.window == 1}}">有窗</text>
+        <text wx:else>部分有窗</text>
+      </view>
+      <view class="w300 dilb fs28 col333">
+        <text class="mr30 col808080">可住</text>
+        <text>{{info.galleryful}}人</text>
+      </view>
+    </view>
+
+    <view class="room-descr-item-block">
+      <view class="w300 dilb fs28 col333">
+        <text class="mr30 col808080">面积</text>
+        <text>{{info.area}}㎡</text>
+      </view>
+      <view class="w300 dilb fs28 col333">
+        <text class="mr30 col808080">楼层</text>
+        <text>{{info.floor}}</text>
+      </view>
+    </view>
+
+    <view class="room-descr-item-block">
+      <view class="w300 dilb fs28 col333">
+        <text class="mr30 col808080">早餐</text>
+        <text>{{info.breakfast}}</text>
+      </view>
+      <view class="w300 dilb fs28 col333">
+        <text class="mr30 col808080">其他</text>
+        <text>无</text>
+      </view>
+    </view>
+
+    <view class="room-descr-item-blocks">
+      <view class="ellipsis dilb fs28 col333">
+        <text class="cx col808080 mr30">床型</text>
+        <text wx:for="{{info.roomBeds}}" wx:for-index="indx"  wx:key="indx" wx:for-item="itemRoomBeds">{{itemRoomBeds.bedSize}}{{itemRoomBeds.bedType}}{{itemRoomBeds.bedNum}}张;</text>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<!-- 退款 -->
+<view class="room-descr-block">
+  <view class="room-descr">
+
+    <view class="room-descr-title fs28 col4d4d4d">退款规则</view>
+    <view class="fs24 col666">
+      <view class="room-descr-refund-cente">•不可取消，订单确认后不可取消/变更，如未入住，酒店将扣除全额房费。</view>
+      <view class="room-descr-refund-cente">•房间整晚保留。</view>
+    </view>
+
+  </view>
+</view>
+
+<!-- 使用 -->
+<view class="room-descr-block room-descr-user">
+  <view class="room-descr">
+
+    <view class="room-descr-title fs28 col4d4d4d">使用规则</view>
+    <view class="fs24 col666">
+      <view class="room-descr-refund-cente">•直接消费，请携带入住人身份证，凭姓名和预定人手机号直接办理入住。</view>
+      <view class="room-descr-refund-cente">•请在12：00之后入住，并于次日12：00之前退房；如需提前入住或延时退房，请咨询商家。</view>
+    </view>
+
+  </view>
+</view>
+
+<view class="footer-btn">
+  <view class="fs35 footer-btn-price">¥{{info.price}}</view>
+  <view class="fs35 footer-btn-rout" wx:if="{{info.roomState == true}}" id="{{roomId}}" bindtap="reserve">预定</view>
+  <view class="fs35 footer-btn-rout bg-color" wx:if="{{info.roomState == false}}">已满</view>
+</view>

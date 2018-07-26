@@ -1,0 +1,27 @@
+<view class="calender">
+  <view class="layout-flex row week-header" style="background-color: #ffffff;">
+    <text class="date-week" style="width:14.28%;height:20px;display: inline-block;" wx:for="{{weekStr}}" wx:key="{{index}}">
+      <text wx:if="{{item !=='日' && item !=='六'}}">{{item}}</text>
+      <text wx:if="{{item ==='日' || item ==='六'}}" class="week">{{item}}</text>
+    </text>
+  </view>
+</view>
+<view style="margin-top:50px;"></view>
+<!-- style="padding:20rpx 20rpx;" -->
+<view wx:for="{{dateList}}" wx:key="{{index}}" wx:for-item="dateItem" style="padding: 20rpx;">   
+  <view class="date-year-month" data-index="{{index}}">{{dateItem.year}}年{{dateItem.month}}月
+    <image class="icon-date-left"src="{{imgUrl_date}}"></image>
+    <image class="icon-date-right"src="{{imgUrl_date}}"></image>
+  </view>
+  <view class="layout-flex row day-con" style="flex-wrap: wrap;margin-top:10rpx;">
+    <view class="date-day {{item.day<=0?'bgwhite':item.class}}" style="width:14.28%;height:70rpx;"
+      data-year="{{dateItem.year}}" data-month="{{dateItem.month}}" data-day="{{item.day}}" bindtap="onPressDate" wx:for="{{dateItem.days}}"
+      wx:key="{{index}}">
+      <view class='item-days'>
+        <text style='font-size:24rpx;'>{{item.day>0?(item.daytext?item.daytext:item.day):''}}</text>
+        <text class="room-time" wx:if="{{item.inday}}">入住</text>
+        <text class="room-time" wx:if="{{item.outday}}">离店</text>
+      </view>
+    </view>
+  </view>
+</view>

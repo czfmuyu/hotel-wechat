@@ -1,0 +1,18 @@
+/* pages/guestRoomDetail/guestRoomDetail.wxss */
+
+page {width: 100%;height: 100%;background: #f5f5f5;padding-bottom: 100rpx;}
+.room-descr-block{padding:10rpx 20rpx;}
+.room-top{padding:20rpx 20rpx 10rpx;}
+.room-descr{background-color: #fff;padding: 24rpx 0;border-radius: 30rpx;}
+.room-descr-item-block{display: flex;justify-content: space-around;padding: 5rpx 0;}
+.room-descr-refund-cente{display: block;text-align: left;line-height: 1.35;padding: 6rpx 24rpx;}
+.cx{ margin-left:27.5rpx;}
+.room-descr-title{text-align: left;font-size: 30rpx;padding: 5rpx 24rpx;}
+.footer-btn{width: 100%;height: 100rpx;position: fixed;bottom: 0;display: flex;flex-direction: row;}
+.footer-btn-rout{width: 70%;background-color: #22AC38;color: #fff;text-align: center;line-height: 2.75;}
+.bg-color{background-color: #b3b3b3;}
+.footer-btn-price{width: 30%;background-color: #fff;color: #4d4d4d;text-align: center;line-height: 2.75;}
+.room-descr-user{margin-bottom: 100rpx;}
+.top-swiper{position: relative; height: 400rpx;}
+.tips{position: absolute;right:40rpx;bottom:20rpx;padding: 8rpx 12rpx;background-color: #000000;color: #fff;border-radius: 27rpx;opacity: 0.5;}
+.img-h{height: 400rpx;}

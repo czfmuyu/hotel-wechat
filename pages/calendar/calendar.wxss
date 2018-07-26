@@ -1,0 +1,27 @@
+/* pages/dateSelect/dateSelect.wxss */
+page{background-color: #f5f5f5;}
+.calender{position:fixed;top:0;background-color: #fff;font-size: 30rpx;width: 100%; z-index: 10;}
+.date-year-month{text-align: center;font-size:34rpx;font-family: PingFang-SC-Medium;background-color: #2788f9;height: 140rpx;color:#fff;padding-top: 80rpx;border-top-left-radius: 30rpx;border-top-right-radius: 30rpx;position: relative;z-index: 1;}
+.icon-date-left{position: absolute;width: 60rpx;height: 8rpx;left: 60rpx;bottom: -5rpx;background-color: #ccc;border-radius: 4px;}
+.icon-date-right{position: absolute;width: 60rpx;height: 8rpx;background-color: #ccc;border-radius: 4px;bottom: -5rpx;right: 60rpx;}
+.date-day{text-align: center;padding: 10rpx 0; font-size: 30rpx;}
+.date-day.bgitem{background-color: #d8ecf9;}
+.date-day.active{background: #2788f9;color:#FFF;}
+.date-day.unavailable{color:#aaa;}
+.date-week{text-align: center;padding: 10rpx 0; font-size: 30rpx;}
+.week{color:#099FDE;}
+.row{display: flex;flex-direction: row;background-color: #fff;padding-top:62rpx;border-bottom-left-radius: 30rpx;border-bottom-right-radius: 30rpx;}
+ .item-days{display: flex;flex-direction:column;justify-content: center;align-items: center;font-size: 35rpx;} 
+.bgwhite{background-color: #fff;}
+.room-time{font-size:24rpx;}
+
+.week-header{
+    /* display: flex;
+    justify-content: space-around; */
+    padding: 10rpx 30rpx;
+}
+.day-con{
+    /* display: flex;
+    justify-content: space-around; */
+    padding: 10rpx;
+}

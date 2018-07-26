@@ -1,0 +1,85 @@
+<!--pages/guestRoomOrder/guestRoomOrder.wxml-->
+<!-- <text>pages/guestRoomOrder/guestRoomOrder.wxml</text> -->
+
+<view class="room-top">
+  <view class="room-descr">
+
+    <view class="room-info-block">
+      <view class="radTL20 radBL20 room-info-item">
+        <image class="radTL20 radBL20 img" src="{{info.roomImg}}" alt=""></image>
+      </view>
+      <view class="radTR20 radBR20 room-info-right-item">
+        <viww class="fs35 col333 ellipsis lh90">{{info.roomName}}</viww>
+        <view class="lh40 ta-l">
+          <text class="fs25 ellipsis col808080">{{info.area}}㎡|{{info.bedType}}|<text wx:if="{{info.window == 0}}">无窗</text><text wx:elif="{{info.window == 1}}">有窗</text><text wx:else>部分有窗</text></text>
+          <text class="fs32 cole4842d">￥{{info.price}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class="room-descr-block">
+  <view class="room-descr">
+
+    <view class="time h80" bindtap="goPage">
+      <view class="t1 ml20 fs30 pt20 col808080">入住：
+        <text class="fs30 col333"> {{checkInDate}}</text>
+      </view>
+      <view class="t1 col808080 fs30 pt20">离开：
+        <text class="fs30 col333">{{checkOutDate}}</text>
+      </view>
+      <view class="t2 col333 pt20 fs30">{{dateNumber}}晚</view>
+      <view class="t3 col808080 pt20 pl20 fs22"><text class="lh40">去选择</text><image class="fr b-icon mr20 mt10" src="{{_iconArrowRight}}" alt=""></image></view>
+    </view>
+  </view>
+</view>
+
+<view class="room-descr-block">
+  <view class="room-descr pt15 pb15 pr20 pl20">
+
+    <view class="room-block h50 fs30 bor-bottom">
+      <text class="tips-color mr-block">房间数</text>
+      <picker class="room-num cb col333" bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}">
+        <text class="fs28">{{info.numberOfRooms}}间</text>
+        <image class="fr icon-right mt15 mr20" src="{{_iconArrowBottom}}" alt=""></image>
+      </picker>
+    </view>
+
+    <view class="room-block room-people bor-bottom  fs30" wx:for="{{info.userNameList}}" wx:key="index" wx:for-index="index" wx:for-item="itemName">
+      <view class="tips-color mr-block">入住人</view>
+      <view class="room-people-block col333">
+        <view class="h50">
+          <input class="people-mb fs28" type="text" name="" data-index='{{index}}' placeholder="每间填一位入住人姓名" bindinput="bindNameInput"/>
+        </view>
+      </view>
+    </view>
+
+    <view class="room-people  fs30">
+      <view class="tips-color mr10 w150">联系手机</view>
+      <view class="room-people-block col333">
+        <view class="h50">
+          <input type="number" class="fs28" name="" placeholder="请填写手机号" bindinput="bindKeyInput" />
+        </view>
+      </view>
+    </view>
+
+  </view> 
+</view>
+
+<view class="room-descr-block">
+  <view class="room-descr fs24 pt15 pb15 col666">
+
+    <view class="footer-tips">•24小时无偿接送浦东机场。</view>
+    <view class="footer-tips">•迪士尼接送班车、野生动物园班车、上海著名景点穿梭巴士，所有班车服务均是无偿的。</view>
+    <view class="footer-tips">•需提前预约，具体班次请点击拨打按钮咨询酒店前台 021-68661988。</view>
+    <view class="footer-tips">•因每日单价不同,如需预定多天,总价可能有所调整。</view>
+
+  </view>
+</view>
+
+<view class="footer-btn">
+  <view class="fs35 footer-btn-price">¥{{payPrice}}</view>
+  <view class="fs35 footer-btn-rout" data-roomId="{{roomId}}" data-info="{{info}}"  bindtap="reserve">提交订单</view>
+</view>

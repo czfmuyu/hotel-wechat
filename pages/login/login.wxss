@@ -1,0 +1,15 @@
+/* pages/login/login.wxss */
+.login-con{width:600rpx;min-height:208rpx;margin: 214rpx auto 0 auto;}
+
+.field{width:100%; height:132rpx; line-height:132rpx;border-bottom: 1rpx solid rgb(231, 229, 229)}
+.icon-css{height: 46rpx; margin-left: 20rpx;margin-right: 20rpx; margin-top: 43rpx;}
+.icon-phone{width: 35rpx;}
+.icon-lock{width: 39rpx;}
+
+.field input{height:132rpx;}
+.phone-input{width: 80%;}
+.code-input{width: 300rpx;}
+.pld{line-height: 132rpx; padding-left: 20rpx;font-size: 24rpx;color:#999;}
+
+.get-code{width:190rpx;height:58rpx;line-height: 58rpx; margin-top: 37rpx; border-radius: 50rpx; background-color:#2788f9;font-weight: 300; color: #fff}
+.btn-login{width: 600rpx;height: 88rpx;line-height: 88rpx;margin-top: 122rpx; border-radius: 44rpx;font-weight: 300;	background-image: linear-gradient(0deg,  #2788f9 0%, #6fb1fe 100%),linear-gradient(#ab47bc, #ab47bc);background-blend-mode: normal, normal;}

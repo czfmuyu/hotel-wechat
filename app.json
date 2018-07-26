@@ -1,0 +1,50 @@
+{
+  "pages": [
+
+    "pages/index/index",
+    "pages/login/login",
+    "pages/order/order",
+    "pages/mine/mine",
+    "pages/auth/auth",
+    "pages/orderdetail/orderdetail",
+    "pages/album/album",
+    "pages/hoteldetail/hoteldetail",
+    "pages/calendar/calendar",
+    "pages/map/map",
+    "pages/guestRoomDetail/guestRoomDetail",
+    "pages/guestRoomOrder/guestRoomOrder"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#4D95E9",
+    "navigationBarTextStyle": "#FFF",
+    "navigationBarTitleText": "如家酒店",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#2788F9",
+    "backgroundColor": "#FFF",
+    "borderStyle": "#F4F4F4",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index@2x.png",
+        "selectedIconPath": "images/index_active@2x.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "images/order@2x.png",
+        "selectedIconPath": "images/order-x@2x.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine@2x.png",
+        "selectedIconPath": "images/mine-x@2x.png"
+      }
+    ]
+  }
+}

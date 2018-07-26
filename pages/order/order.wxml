@@ -1,0 +1,99 @@
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">当前订单</view>
+  <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">全部订单</view>
+</view>
+
+<swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
+  <!--订单  -->
+  <swiper-item class="hotel-order-list">
+    <!-- 订单 -->
+    <view class='hotel-order'>
+      <view wx:if="{{haveorder}}" class='hotel-order-have'>
+        <block wx:for="{{payedOrder}}" wx:key="unique">
+          <view class='order-payed' catchtap='goDetailOrder' data-orderCode="{{item.orderCode}}">
+            <view class='all-list-top'>
+              <view class='order-status' >
+                <view class='item-orderState'>等待入住</view>
+              </view>
+              <!--list  -->
+              <view class='hotel-title-name'>{{item.hotelName}}</view>
+              <view class='hotel-title-address'>
+                <view class='item-address'>{{item.address}}</view>
+                <view class='item-right'>
+                  <image src='{{imgurl}}order/order-navigation-icon.png' class='order-navigation-icon' catchtap='lookNavigation' data-lat="{{item.lat}}" data-lng="{{item.lng}}"></image>
+                  <text class='order-navigation-right'></text>
+                  <image src='{{imgurl}}order/order-phone-icon.png' class="order-phone-icon" catchtap='phoneCall'></image>
+                </view>
+              </view>
+            </view>
+            <view class='all-list-down'>
+              <view class='item-detail-room'>{{item.roomName}}
+                <text wx:if="{{item.window==1}}">(有窗)</text>
+                <text wx:else>(无窗)</text>
+              </view>
+              <view class='item-detail-time'>
+                <text class="mr10">入住：{{item.startTime}}</text> <text class="mr10">离店：{{item.endTime}}</text> {{item.lengthOfResidence}}晚/{{item.numberOfRooms}}间
+              </view>
+              <view class='item-pay-price'>￥{{item.totalPrice}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <!--end  -->
+      <!--no-order  -->
+      <view wx:else class='hotel-order-no'>
+        <image src='{{imgurl}}order/no-ordr-icon.png' class='no-order-icon'></image>
+      </view>
+    </view>
+    <!--end  -->
+  </swiper-item>
+  <!--全部订单  -->
+  <swiper-item class="hotel-order-all">
+    <!-- 订单 -->
+    <view class='hotel-order'>
+      <view wx:if="{{allorder}}" class='hotel-order-all'>
+        <block wx:for="{{listMsg}}" wx:key="unique">
+          <view class='order-all-list' catchtap='goDetailOrder' data-orderCode="{{item.orderCode}}">
+            <view class='all-list-top'>
+              <view class='order-status'  >
+                <!-- <view wx:if="{{item.orderState=='-1'}}">取消订单</view>
+          <view wx:elif="{{item.orderState== '0'}}">未付款</view> -->
+                <view wx:if="{{item.orderState=='1'}}" class='item-orderState'>等待入住</view>
+                <view wx:elif="{{item.orderState=='2'}}" class='item-orderState'>已入住</view>
+                <view wx:elif="{{item.orderState=='3'}}" class='item-orderState'>已退款</view>
+                  <view wx:elif="{{item.orderState=='4'}}" class='item-orderState'>等待入住</view>
+              </view>
+              <!--list  -->
+              <view class='hotel-title-name'>{{item.hotelName}}</view>
+              <view class='hotel-title-address'>
+                <view class='item-address'>{{item.address}}</view>
+                <view class='item-right'>
+                  <image src='{{imgurl}}order/order-navigation-icon.png' class='order-navigation-icon' catchtap='lookNavigation' data-lat="{{item.lat}}" data-lng="{{item.lng}}"></image>
+                  <text class='order-navigation-right'></text>
+                  <image src='{{imgurl}}order/order-phone-icon.png' class="order-phone-icon" catchtap='phoneCall'></image>
+                </view>
+              </view>
+            </view>
+            <view class='all-list-down'>
+              <view class='item-detail-room'>{{item.roomName}}
+                <text wx:if="{{item.window==1}}">(有窗)</text>
+                <text wx:else>(无窗)</text>
+              </view>
+              <view class='item-detail-time'>
+                入住:{{item.startTime}} 离店 :{{item.endTime}} {{item.lengthOfResidence}}晚{{item.numberOfRooms}}间
+              </view>
+              <view class='item-pay-price'>￥{{item.totalPrice}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <!--end  -->
+      <!--no-order  -->
+      <view wx:else class='hotel-order-no'>
+        <image src='{{imgurl}}order/no-ordr-icon.png' class='no-order-icon'></image>
+      </view>
+      <!--end  -->
+    </view>
+  </swiper-item>
+</swiper>
+<!--end  -->

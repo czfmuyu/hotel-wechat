@@ -1,0 +1,100 @@
+<view class="wrapper">
+    <loading wx:if="{{_showLoading}}">加载中</loading>
+    <!--  Module-1 Header... -->
+    <view class="header-con pr fl">
+        <!-- Msg begin -->
+        <view class='msg-container msg-2 awesome-animation' wx:for="{{msgArr}}" wx:key="{{index}}">
+            <view class="msg-content">刚刚
+            <span class="msg-count">{{item.count}}</span>位顾客
+            <span class="msg-behaviour">{{item.action ===1?'查看':'浏览'}}</span>了
+            <span class="msg-product">{{item.product===1?'酒店信息':'房间照片'}}</span>
+            </view>
+        </view>
+        <!-- Msg end -->
+        <!-- 电话... -->
+        <view class="icon-tel-con pf" bindtap="doCall"><image class="icon-tel shake" src="{{imgUrl_tel}}" mode="aspectFill"></image></view>
+        <!-- 轮播...-->
+        <swiper class="swiper-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{imgUrls_swiper}}" wx:key="{{item.id}}">
+              <swiper-item bindtap="goAlbum">
+                <image class="slide-image" src="{{item.carouselImg}}"  bindload="imageLoad"></image>
+              </swiper-item>
+            </block>
+          </swiper>
+    </view>
+
+    <!--  Module-2 Info... -->
+    <view class="info-con pr fl">
+        <view class="info-top-con hor-center bg-ffffff">
+            <view class="hot-area-left pa" bindtap="goDate"></view>
+            <view class="hot-area-right pa" bindtap="goDate"></view>
+            <view class="info-top-label-con fs24 col666">
+                <text class="info-top-text">入住时间</text>
+                <text class="info-top-text">入住 {{dateNumber}} 晚</text>
+                <text class="info-top-text">离店日期</text>
+            </view>
+            
+            <view class="info-top-date-con fs30 col333">
+                <text class="info-top-text">{{checkInDate}}</text>
+                <text class="info-top-text">|</text>
+                <text class="info-top-text">{{checkOutDate}}</text>
+            </view>
+            
+            
+        </view>
+        <view class="info-mid-con bg-ffffff">
+            <view class="pos-con">
+                <view class="pos-left-con fl">
+                    <view class="pos-addr fs28 fw300 col4d4d4d ellipsis">{{_hotelInfo.address}}</view>
+                    <view class="pos-value-con"><image class="icon-location"src="{{imgUrl_location}}"></image><text class="pos-value fs24 fw300 col808080 ellipsis">距您直线{{stright}}km，驾车约{{distance}}km，约{{time}}分钟</text></view>
+                </view>
+                <!-- 地图箭头 -->
+                <view class="pos-right-con fr" bindtap='lookNavigation'><image class="icon-location-arro" src="{{imgUrl_location_arro}}"></image></view>
+            </view>
+            <!-- 服务... -->
+            <view class="service-con">
+                    <image class="icon-service fl" src="{{imgUrl_free}}" style="margin-left: 20rpx;"></image>
+                    <text class="service-txt fl fs20 col808080" >无偿专车接站</text>
+                    <image class="icon-service fl" src="{{imgUrl_park}}"></image>
+                    <text class="service-txt fl fs20 col808080">停车场</text>
+                    <image class="icon-service fl" src="{{imgUrl_biz}}"></image>
+                    <text class="service-txt fl fs20 col808080">商务中心</text>
+                    <image class="icon-service fl" src="{{imgUrl_wifi}}"></image>
+                    <text class="service-txt fl fs20 col808080">免费WIFI</text>
+                    <text class="service-txt txt5 fl  fs20 col808080" catchtap='lookMore'>详情/设施>></text>
+            </view>
+        </view>
+        <!-- Announce... -->
+        <view class="info-bottom-con bg-ffffff">
+            <image class="icon-announce fl" src="{{imgUrl_announce}}"></image>
+            <swiper class="swiper-announce-container" horizontal="true" autoplay="true" circular="false" interval="6000">
+            <block wx:for="{{_announceList}}" wx:key="{{index}}">
+                <swiper-item>
+                    <view class="swiper-announce-item  biz-scope fs22 col4d4d4d">{{item}}</view>
+                </swiper-item>
+            </block>
+            </swiper>
+        </view>
+    </view>
+
+    <!--  Module-3 List... -->
+    <view class="list-con pr fl">
+        <block wx:for="{{_glongHotelRoomList}}" wx:key="{{index}}">
+            <view class="list-item-con pr fl bg-ffffff">
+                <image class="item-img pa" src="{{item.roomImg}}"></image>
+                <view class="hot-area-detail pa" data-roomid="{{item.roomId}}" bindtap="checkRoomDetail"></view>
+                <view class="item-banner-con pa">
+                    <span class="banner-span fs30 fw300 t-1 ellipsis">{{item.roomName}}</span>
+                    <span class="banner-span fs24 fw300 t-2">{{item.area}}m²</span>
+                    <!-- <span class="banner-span fs24 fw300 t-3">{{item.bedType}}</span> -->
+                    <span class="banner-span fs24 fw300 t-4">{{item.window == 0?'无窗':item.window == 1?'有窗':'部分有窗'}}</span>
+                    <span class="banner-span fs24 fw300 t-5">详情>></span>
+                    <view wx:if="{{item.roomState == true}}" class="btn-con fr fs24 fw300 bg-4d95e9" data-roomid="{{item.roomId}}" data-price="{{item.price}}" bindtap="doReserve"><text class="price">¥{{item.price}}</text><text class="status">预定</text> </view>
+                    <view wx:if="{{item.roomState == false}}" class="btn-con fr fs24 fw300 bg-b3b3b3"><text class="price">¥{{item.price}}</text><text class="status">已满</text> </view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+</view>
+

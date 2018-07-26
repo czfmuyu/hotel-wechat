@@ -1,0 +1,48 @@
+page {width: 100%;height: 100%;background: #f5f5f5;}
+.swiper-tab {width: 100%;border-bottom: 2rpx solid #ccc;text-align: center;height: 88rpx;line-height: 88rpx;display: flex;flex-flow: row;justify-content: space-between;}
+.swiper-tab-item {width: 50%;color: #4d4d4d;font-size: 30rpx;}
+.active {color: #2788f9;height: 88rpx;border-bottom: 2rpx solid #2788f9;}
+swiper {width: 100%;height: 92vh;}
+.swiper-item-css {width: 100%;height: 100%;}
+swiper-item {width: 100%;height: 92vh;overflow-y: auto;}
+
+/*hotel-order  */
+
+.hotel-order {
+  width: 100%;
+  height: 100%;
+}
+
+.hotel-order-no {
+  width: 100%;
+  height: 100%;
+}
+
+.no-order-icon {
+  width: 228rpx;
+  height: 273rpx;
+  display: block;
+  margin: 16.8% auto;
+}
+/*payed-order  */
+.order-payed{width: 710rpx;min-height:100rpx;border-radius: 20rpx;margin: 20rpx auto;background: #fff; }
+
+/*all-list  */
+
+.order-all-list {width: 710rpx;min-height: 100rpx;border-radius: 20rpx;background: #fff;margin: 20rpx auto;}
+.all-list-top {width: 100%;height: 188rpx;border-bottom: 2rpx solid #f5f5f5;overflow: hidden;}
+.order-status {width: 100%;height: 42rpx;margin-top: 24rpx;line-height: 42rpx;font-size: 30rpx;color: #f39002;}
+.item-orderState {text-indent: 20rpx;}
+.hotel-title-name {width: 100%;height: 55rpx;line-height: 55rpx;font-size: 30rpx;color: #4d4d4d;text-indent: 20rpx;}
+.hotel-title-address {height: 58rpx;line-height: 58rpx;font-size: 24rpx;color: #808080;text-indent: 20rpx;}
+.item-address {float: left;display: block;}
+.item-right {width: 140rpx;height: 100%;float: right;margin-right: 20rpx;}
+.order-navigation-right {width: 4rpx;height: 33rpx;background: #2788f9;display: block;float: left;margin: 5rpx 20rpx;}
+.order-navigation-icon, .order-phone-icon {width: 43rpx;height: 43rpx;display: block;float: left;}
+
+/*----down--  */
+
+.all-list-down {padding-bottom: 20rpx;position: relative;width: 100%;border-bottom: 2rpx solid #f5f5f5;}
+.item-detail-room {font-size: 30rpx;color: #4d4d4d;margin-top: 16rpx;height: 50rpx;line-height: 50rpx;text-indent: 20rpx;}
+.item-detail-time {font-size: 24rpx;color: #808080;height: 50rpx;line-height: 50rpx;text-indent: 20rpx;}
+.item-pay-price {position: absolute;right: 49rpx;top: 20rpx;color: #f39002;}
